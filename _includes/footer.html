@@ -1,0 +1,66 @@
+<footer class="site-footer">
+	<div class="container pure-g">
+        <div class="footer-col pure-u-1 pure-u-md-1-4">
+            <img src="{{ "/img/umsu_4.png" | absolute_url }}" alt="" class="footer-logo">
+        </div>
+        <div class="footer-col pure-u-1 pure-u-md-1-4">
+            <h3>About {{ site.short_title }}</h3>
+            <ul>
+            {% for item in site.menus.footer %}
+                <li><a href="{{ item.url | absolute_url }}">{{ item.title }}</a></li>
+            {% endfor %}
+            </ul>
+        </div>
+        <div class="footer-col pure-u-1 pure-u-md-1-4">
+            <h3>Research</h3>
+            <ul>
+            {% for project in site.projects limit:5 %}
+                <li><a href="{{ project.url | absolute_url }}">{{ project.title }}</a></li>
+            {% endfor %}
+            {% if site.projects | size > 5 %}
+                <li><a href="{{ "/projects/" | absolute_url }}">See all projects</a></li>
+            {% endif %}
+            </ul>
+        </div>
+        <div class="footer-col pure-u-1 pure-u-md-1-4">
+            <h3>Contact</h3>
+<h1><a href="https://www.linkedin.com/company/eraunimelb" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>&nbsp;<a href="https://www.facebook.com/ERAUniMelb" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-square"></i></a></h1>
+            {% include address.html %}
+        </div>
+	</div>
+	<div class="copyright">
+        <p>
+            Made with &#10084; by the people at {{ site.title }}<br>
+		</p>
+	</div>
+</footer>
+<!-- Javascript             {{ 'now' | date: "%Y" }} &#10084; {{ site.title }}<br> -->
+<script src="{{ "/js/main.js" | absolute_url }}" type="text/javascript"></script>
+<!-- Load Facebook SDK for JavaScript -->
+      <div id="fb-root"></div>
+      <script>
+        window.fbAsyncInit = function() {
+          FB.init({
+            xfbml            : true,
+            version          : 'v8.0'
+          });
+        };
+
+        (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
+
+      <!-- Your Chat Plugin code -->
+      <div class="fb-customerchat"
+        attribution=setup_tool
+        page_id="112243593784315"
+  theme_color="#8B2004"
+  logged_in_greeting="Hi, Welcome! Do you have any questions? How can we help you?"
+  logged_out_greeting="Hi, Welcome! Do you have any questions? How can we help you?">
+      </div>
+		</body>
+</html>

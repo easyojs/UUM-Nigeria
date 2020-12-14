@@ -1,0 +1,54 @@
+title: Equity Research Association
+short_title: ERA
+description: Website of Equity Research Association
+baseurl:
+permalink: "/:path/"
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: page
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+collections:
+  people:
+    output: true
+    permalink: "/about/:path/"
+  executive:
+    output: true
+    permalink: "/about/:path/"
+  marketing:
+    output: true
+    permalink: "/about/:path/"
+  research:
+    output: true
+    permalink: "/about/:path/"
+  sponsorship:
+    output: true
+    permalink: "/about/:path/"
+  event:
+    output: true
+    permalink: "/about/:path/"
+  posts:
+    output: true
+  projects:
+    output: true
+    permalink: "/projects/:path/"
+  events:
+    output: true
+    permalink: "/events/:path/"
+  careers:
+    output: true
+    permalink: "/careers/:path/"
+# tag_page_layout: tag_page
+# tag_page_dir: tag
+jekyll-archives:
+  enabled: all
+  layout: "archive"
+plugins:
+  - jekyll-menus
+  - jekyll-feed
+  - jekyll-archives
